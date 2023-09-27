@@ -1,62 +1,73 @@
+/* Importing the Mulish font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
+/* Defining custom CSS variables */
 :root {
-	--primary: #2d3337;
-	--secondary: #f7f7ec;
-	--white: #fff;
+	--primary: #2d3337; /* Primary color */
+	--secondary: #f7f7ec; /* Secondary color */
+	--white: #fff; /* White color */
 }
 
+/* Resetting default styles for all elements */
 *,
 ::after,
 ::before {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: Mulish;
+	font-family: Mulish; /* Setting default font */
 }
 
+/* Styling the body element */
 body {
-	background-color: var(--secondary);
+	background-color: var(--secondary); /* Setting background color */
 }
 
+/* Styling for the sidebar */
 .sidebar {
+	/* Sidebar dimensions and positioning */
 	width: 300px;
 	height: 100vh;
 	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: 1;
-	padding: 20px;
+	padding: 20px; /* Adding padding */
 }
 
+/* Styling for the content within the sidebar */
 .sidebar .content {
 	height: 100%;
 	width: 100%;
 	background-color: var(--white);
 	border-radius: 8px;
 	padding: 10px;
-	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Adding box shadow */
 	position: relative;
-	transition: width 0.1s;
+	transition: width 0.1s; /* Adding transition effect */
 }
 
+/* Styling for the top section of the sidebar */
 .sidebar .content .sidebar-top {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 }
 
+/* Styling for the logo within the sidebar */
 .sidebar .content .sidebar-top .logo {
 	width: 40px;
 	height: 40px;
 }
 
+/* Styling for the title within the sidebar */
 .sidebar .content .sidebar-top .title {
 	font-size: 1.4rem;
 	font-weight: bold;
 	color: var(--primary);
 }
 
+/* Styling for the divider line */
 .sidebar .content .divider {
 	height: 2px;
 	width: 100%;
@@ -65,16 +76,19 @@ body {
 	border-radius: 2px;
 }
 
+/* Styling for the links list */
 .sidebar .content .links {
 	list-style: none;
 }
 
+/* Styling for each link item */
 .sidebar .content .links li {
 	display: inline-block;
 	width: 100%;
 	margin-bottom: 5px;
 }
 
+/* Styling for the link anchor element */
 .sidebar .content .links li a {
 	display: flex;
 	align-items: center;
@@ -86,10 +100,12 @@ body {
 	position: relative;
 }
 
+/* Hover effect for links */
 .sidebar .content .links li a:hover {
 	background-color: var(--secondary);
 }
 
+/* Styling for the icon within the link */
 .sidebar .content .links li a svg {
 	width: 20px;
 	height: 20px;
@@ -97,24 +113,29 @@ body {
 	pointer-events: none;
 }
 
+/* Styling for the text within the link */
 .sidebar .content .links li a span {
 	color: var(--primary);
 	font-size: 0.9rem;
 	pointer-events: none;
 }
 
+/* Styling for the selected link */
 .sidebar .content .links li a.selected {
 	background-color: var(--primary);
 }
 
+/* Styling for the text in the selected link */
 .sidebar .content .links li a.selected span {
 	color: var(--white);
 }
 
+/* Styling for the icon in the selected link */
 .sidebar .content .links li a.selected svg {
 	stroke: var(--white);
 }
 
+/* Styling for the bottom section of the sidebar */
 .sidebar .content .sidebar-bottom {
 	position: absolute;
 	left: 0;
@@ -123,6 +144,7 @@ body {
 	padding: 10px;
 }
 
+/* Styling for the collapse button */
 .sidebar .content .sidebar-bottom .collapse-btn {
 	width: 100%;
 	display: flex;
@@ -136,11 +158,13 @@ body {
 	background: none;
 }
 
+/* Styling for the text in the collapse button */
 .sidebar .content .sidebar-bottom .collapse-btn span {
 	color: var(--primary);
 	font-size: 0.9rem;
 }
 
+/* Styling for the arrow icon in the collapse button */
 .sidebar .content .sidebar-bottom .collapse-btn svg {
 	width: 20px;
 	height: 20px;
@@ -149,18 +173,22 @@ body {
 	transition: transform 0.2s;
 }
 
+/* Hover effect for the collapse button */
 .sidebar .content .sidebar-bottom .collapse-btn:hover {
 	background-color: var(--secondary);
 }
 
+/* Styling for the collapsed sidebar */
 .sidebar.collapsed .content {
 	width: 60px;
 }
 
+/* Hiding the title in the collapsed sidebar */
 .sidebar.collapsed .content .sidebar-top .title {
 	display: none;
 }
 
+/* Styling for the text in the links when sidebar is collapsed */
 .sidebar.collapsed .content .links li a span {
 	position: absolute;
 	left: calc(100% + 20px);
@@ -175,14 +203,17 @@ body {
 	display: none;
 }
 
+/* Displaying the text on hover in collapsed sidebar */
 .sidebar.collapsed .content .links li a:hover span {
 	display: inline-block;
 }
 
+/* Rotating the arrow icon in the collapse button */
 .sidebar.collapsed .content .sidebar-bottom .collapse-btn svg {
 	transform: rotate(0deg);
 }
 
+/* Hiding the text in the collapse button */
 .sidebar.collapsed .content .sidebar-bottom .collapse-btn span {
 	display: none;
 }
