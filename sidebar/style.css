@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+:root {
+	--primary: #2d3337;
+	--secondary: #f7f7ec;
+	--white: #fff;
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Mulish;
+}
+
+body {
+	background-color: var(--secondary);
+}
+
+.sidebar {
+	width: 300px;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	padding: 20px;
+}
+
+.sidebar .content {
+	height: 100%;
+	width: 100%;
+	background-color: var(--white);
+	border-radius: 8px;
+	padding: 10px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	position: relative;
+	transition: width 0.1s;
+}
+
+.sidebar .content .sidebar-top {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.sidebar .content .sidebar-top .logo {
+	width: 40px;
+	height: 40px;
+}
+
+.sidebar .content .sidebar-top .title {
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: var(--primary);
+}
+
+.sidebar .content .divider {
+	height: 2px;
+	width: 100%;
+	background-color: var(--secondary);
+	margin: 10px 0;
+	border-radius: 2px;
+}
+
+.sidebar .content .links {
+	list-style: none;
+}
+
+.sidebar .content .links li {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.sidebar .content .links li a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 8px;
+	gap: 10px;
+	transition: background-color 0.2s ease-in-out;
+	position: relative;
+}
+
+.sidebar .content .links li a:hover {
+	background-color: var(--secondary);
+}
+
+.sidebar .content .links li a svg {
+	width: 20px;
+	height: 20px;
+	stroke: var(--primary);
+	pointer-events: none;
+}
+
+.sidebar .content .links li a span {
+	color: var(--primary);
+	font-size: 0.9rem;
+	pointer-events: none;
+}
+
+.sidebar .content .links li a.selected {
+	background-color: var(--primary);
+}
+
+.sidebar .content .links li a.selected span {
+	color: var(--white);
+}
+
+.sidebar .content .links li a.selected svg {
+	stroke: var(--white);
+}
+
+.sidebar .content .sidebar-bottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 10px;
+}
+
+.sidebar .content .sidebar-bottom .collapse-btn {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 8px;
+	gap: 10px;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.sidebar .content .sidebar-bottom .collapse-btn span {
+	color: var(--primary);
+	font-size: 0.9rem;
+}
+
+.sidebar .content .sidebar-bottom .collapse-btn svg {
+	width: 20px;
+	height: 20px;
+	stroke: var(--primary);
+	transform: rotate(-180deg);
+	transition: transform 0.2s;
+}
+
+.sidebar .content .sidebar-bottom .collapse-btn:hover {
+	background-color: var(--secondary);
+}
+
+.sidebar.collapsed .content {
+	width: 60px;
+}
+
+.sidebar.collapsed .content .sidebar-top .title {
+	display: none;
+}
+
+.sidebar.collapsed .content .links li a span {
+	position: absolute;
+	left: calc(100% + 20px);
+	top: 50%;
+	transform: translateY(-50%);
+	display: inline-block;
+	padding: 4px 6px;
+	background-color: var(--primary);
+	color: var(--white);
+	border-radius: 3px;
+	font-size: 14px;
+	display: none;
+}
+
+.sidebar.collapsed .content .links li a:hover span {
+	display: inline-block;
+}
+
+.sidebar.collapsed .content .sidebar-bottom .collapse-btn svg {
+	transform: rotate(0deg);
+}
+
+.sidebar.collapsed .content .sidebar-bottom .collapse-btn span {
+	display: none;
+}
